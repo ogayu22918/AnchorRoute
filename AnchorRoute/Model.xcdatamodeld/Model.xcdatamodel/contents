@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="23605" systemVersion="24B91" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="FeaturePrint" representedClassName="FeaturePrint" syncable="YES">
+        <attribute name="featureData" optional="YES" attributeType="Binary"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="thumbnail" optional="YES" attributeType="Binary"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="route" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RouteEntity" inverseName="featurePrint" inverseEntity="RouteEntity"/>
+    </entity>
+    <entity name="RouteEntity" representedClassName="RouteEntity" syncable="YES">
+        <attribute name="docID" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="positions" optional="YES" attributeType="Binary"/>
+        <attribute name="startThumbnail" optional="YES" attributeType="Binary"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="worldMapData" optional="YES" attributeType="Binary"/>
+        <relationship name="featurePrint" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FeaturePrint" inverseName="route" inverseEntity="FeaturePrint"/>
+    </entity>
+</model>
